@@ -6,9 +6,14 @@ import { ChevronRight, ChevronLeft, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
+import { products } from "@/constant/products";
 import Link from "next/link";
 
-const SubHeader = () => {
+type SubHeaderProps = {
+  setMenuOpen: (open: boolean) => void;
+};
+
+const SubHeader = ({ setMenuOpen }: SubHeaderProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
@@ -28,33 +33,6 @@ const SubHeader = () => {
     },
   });
 
-  const products = [
-    {
-      name: "Rouge Dior Lipstick",
-      img: "/images/header/hd1.avif",
-    },
-    {
-      name: "Sublimage Eye Cream",
-      img: "/images/header/hd2.avif",
-    },
-    {
-      name: "Black Orchid Perfume",
-      img: "/images/header/hd3.avif",
-    },
-    {
-      name: "Luminous Silk Foundation",
-      img: "/images/header/hd4.avif",
-    },
-    {
-      name: "Crème de La Mer",
-      img: "/images/header/hd5.avif",
-    },
-    {
-      name: "Virtue Hair Treatment",
-      img: "/images/header/hd6.avif",
-    },
-  ];
-
   const menu = ["Skincare", "Makeup", "Fragrances"];
   const submenu = [
     {
@@ -71,7 +49,11 @@ const SubHeader = () => {
     },
   ];
 
-  const links = ["New Arrivals", "Best Sellers", "Gift Sets"];
+  const links = [
+    { title: "New Arrivals", link: "/bossforskiy/new-arrivals" },
+    { title: "Best Sellers", link: "/bossforskiy/best-sellers" },
+    { title: "Gift Sets", link: "/bossforskiy/gift-sets" },
+  ];
 
   const bottomLinks = [
     "Find a Boutique",
@@ -86,7 +68,7 @@ const SubHeader = () => {
   };
 
   return (
-    <div className="p-4 md:p-6 shadow-md text-black bg-gradient-to-b from-[#ffffff] via-[#ede5dc] to-[#edd7be]">
+    <div className="p-4 md:p-6 shadow-md text-black bg-gradient-to-b from-[#ffffff] via-[#efede9] to-[#fde3d8]">
       <div className="flex flex-col md:flex-row max-w-full md:max-w-11/12 mx-auto h-full">
         {/* Mobile menu button (visible only on small screens) */}
         <div className="md:hidden flex justify-between items-center mb-4">
@@ -136,7 +118,7 @@ const SubHeader = () => {
               backgroundColor: "white",
             }}
           >
-            <aside className="md:flex md:w-1/2 p-2 md:p-6 flex-col justify-between">
+            <aside className="bg-gradient-to-b from-[#fcfcfb] via-[#f3f2ef] to-[#f1ece7] md:flex md:w-1/2 p-2 md:p-6 flex-col justify-between">
               <div className="space-y-2">
                 {menu.map((item, i) => (
                   <div
@@ -151,6 +133,7 @@ const SubHeader = () => {
                 {submenu.map((item, i) => (
                   <div
                     key={i}
+                    onClick={() => setMenuOpen(false)}
                     className="font-semibold mt-1 text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer"
                   >
                     <Link href={item.link}>{item.title}</Link>
@@ -159,12 +142,15 @@ const SubHeader = () => {
               </div>
               <div className="space-y-2 mt-4 md:mt-8">
                 {links.map((item, i) => (
-                  <div
+                  <Link
+                    onClick={() => setMenuOpen(false)}
+                    href={item.link}
                     key={i}
-                    className="font-semibold text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer"
                   >
-                    {item}
-                  </div>
+                    <div className="mb-2 font-semibold text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer">
+                      {item.title}
+                    </div>
+                  </Link>
                 ))}
               </div>
               <div className="mt-6 md:mt-10 space-y-2 text-sm md:text-base text-gray-700">
@@ -197,21 +183,27 @@ const SubHeader = () => {
                 key={i}
                 className="font-semibold text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer"
               >
-                <Link href={item.link}>{item.title}</Link>
+                <Link onClick={() => setMenuOpen(false)} href={item.link}>
+                  {item.title}
+                </Link>
               </div>
             ))}
           </div>
           <div className="space-y-2 mt-4 md:mt-8">
             {links.map((item, i) => (
-              <div
+              <Link
+                onClick={() => setMenuOpen(false)}
+                href={item.link}
                 key={i}
-                className="font-semibold text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer"
+                className=""
               >
-                {item}
-              </div>
+                <div className="mb-2 font-semibold text-lg md:text-2xl hover:text-[#616161] transition-all duration-200 cursor-pointer">
+                  {item.title}
+                </div>
+              </Link>
             ))}
           </div>
-          <div className="mt-6 md:mt-10 space-y-2 text-sm md:text-base text-gray-700">
+          <div className="mt-6 md:mt-10 space-y-[1px] text-sm md:text-base text-gray-700">
             {bottomLinks.map((link, i) => (
               <div
                 key={i}
@@ -233,21 +225,28 @@ const SubHeader = () => {
                 className="keen-slider__slide will-change-transform transition-transform duration-500"
                 key={i}
               >
-                <div className="p-2 md:p-4 flex flex-col items-center space-y-2 md:space-y-4 w-full md:w-72">
-                  <div className="relative w-full h-48 md:h-80 rounded-xl md:rounded-2xl overflow-hidden">
-                    <Image
-                      src={watch.img}
-                      alt={watch.name}
-                      fill
-                      priority={i < 3}
-                      sizes="(max-width: 768px) 100vw, 288px"
-                      className="object-cover"
-                    />
+                <Link
+                  onClick={() => setMenuOpen(false)}
+                  href={`/bossforskiy/products/${watch.name
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
+                >
+                  <div className="p-2 md:p-4 flex flex-col items-center space-y-2 md:space-y-4 w-full md:w-72">
+                    <div className="relative w-full h-48 md:h-80 rounded-xl md:rounded-2xl overflow-hidden">
+                      <Image
+                        src={watch.thumbnail}
+                        alt={watch.name}
+                        fill
+                        priority={i < 3}
+                        sizes="(max-width: 768px) 100vw, 288px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="text-center text-base md:text-lg font-semibold">
+                      {watch.name}
+                    </div>
                   </div>
-                  <div className="text-center text-base md:text-lg font-semibold">
-                    {watch.name}
-                  </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

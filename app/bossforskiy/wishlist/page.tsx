@@ -11,7 +11,7 @@ const page = () => {
         Add products and looks to your wishlist and share them
       </p>
       <div className="mt-6">
-        <Link href="/fashion/collections">
+        <Link href="/bossforskiy/fashion/collections">
           <button className="w-full sm:w-auto px-8 py-4 border bg-black border-black hover:border-white text-white uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-500 group relative overflow-hidden">
             <span className="relative z-10 block">
               Discover the Collections

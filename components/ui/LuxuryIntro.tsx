@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Импорт useRouter
 
@@ -46,7 +47,7 @@ const LuxuryIntro = () => {
         {/* Логотип */}
         <div className="text-white text-3xl font-serif mb-12 tracking-widest">
           <Image
-            src="/logo.jpeg"
+            src="/logo-black.svg"
             alt="Luxury Brand Logo"
             width={250}
             height={100}
@@ -54,49 +55,63 @@ const LuxuryIntro = () => {
           />
         </div>
 
-        {step === "region" && (
-          <>
-            <h2 className="text-black text-xl font-light mb-8 tracking-wider">
-              SELECT YOUR REGION
-            </h2>
-            <div className="grid grid-cols-2 gap-4 mb-12">
-              {regions.map((region) => (
-                <button
-                  key={region.code}
-                  onClick={() => handleRegionSelect(region.code)}
-                  className="py-3 px-4 border border-black text-black hover:bg-black hover:text-white transition-colors duration-300 text-sm tracking-wider"
-                >
-                  {region.name}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-
-        {step === "language" && (
-          <>
-            <h2 className="text-black text-xl font-light mb-8 tracking-wider">
-              SELECT YOUR LANGUAGE
-            </h2>
-            <div className="grid grid-cols-2 gap-4 mb-12">
-              {languages.map((language) => (
-                <button
-                  key={language.code}
-                  onClick={() => handleLanguageSelect(language.code)}
-                  className="py-3 px-4 border border-black text-black hover:bg-black hover:text-white transition-colors duration-300 text-sm tracking-wider"
-                >
-                  {language.name}
-                </button>
-              ))}
-            </div>
-            <button
-              onClick={() => setStep("region")}
-              className="text-white text-xs underline hover:no-underline mt-4"
+        <AnimatePresence mode="wait">
+          {step === "region" && (
+            <motion.div
+              key="region"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
             >
-              Back to regions
-            </button>
-          </>
-        )}
+              <h2 className="text-black text-xl font-light mb-8 tracking-wider">
+                SELECT YOUR REGION
+              </h2>
+              <div className="grid grid-cols-2 gap-4 mb-12">
+                {regions.map((region) => (
+                  <button
+                    key={region.code}
+                    onClick={() => handleRegionSelect(region.code)}
+                    className="py-3 px-4 border border-black text-black hover:bg-black hover:text-white transition-colors duration-300 text-sm tracking-wider"
+                  >
+                    {region.name}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {step === "language" && (
+            <motion.div
+              key="language"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <h2 className="text-black text-xl font-light mb-8 tracking-wider">
+                SELECT YOUR LANGUAGE
+              </h2>
+              <div className="grid grid-cols-2 gap-4 mb-12">
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => handleLanguageSelect(language.code)}
+                    className="py-3 px-4 border border-black text-black hover:bg-black hover:text-white transition-colors duration-300 text-sm tracking-wider"
+                  >
+                    {language.name}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => setStep("region")}
+                className="text-white text-xs underline hover:no-underline mt-4"
+              >
+                Back to regions
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="text-white text-xs mt-12 opacity-70">
           © {new Date().getFullYear()} LUXURY BRAND. ALL RIGHTS RESERVED.

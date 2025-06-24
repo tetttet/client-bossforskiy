@@ -3,8 +3,8 @@ import { useRef } from "react";
 
 const IMG_PADDING = 0;
 
-export  const StickyVideo = ({ videoUrl }: { videoUrl: string }) => {
-  const targetRef = useRef(null);
+export const StickyVideo = ({ videoUrl }: { videoUrl: string }) => {
+  const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
@@ -21,16 +21,16 @@ export  const StickyVideo = ({ videoUrl }: { videoUrl: string }) => {
         top: IMG_PADDING,
         scale,
       }}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className="sticky z-0 overflow-hidden rounded-sm"
     >
       <video
         src={videoUrl}
         className="w-full h-full object-cover"
-        style={{ transform: `scale(${scale})` }}
         autoPlay
         loop
         muted
         playsInline
+        preload="none"
       />
       <motion.div
         className="absolute inset-0 bg-neutral-550"
@@ -41,7 +41,7 @@ export  const StickyVideo = ({ videoUrl }: { videoUrl: string }) => {
 };
 
 export const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
-  const targetRef = useRef(null);
+  const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
@@ -52,6 +52,7 @@ export const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
 
   return (
     <motion.div
+      ref={targetRef}
       style={{
         backgroundImage: `url(${imgUrl})`,
         backgroundSize: "cover",
@@ -60,14 +61,11 @@ export const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
         top: IMG_PADDING,
         scale,
       }}
-      ref={targetRef}
       className="sticky z-0 overflow-hidden rounded-3xl"
     >
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"
-        style={{
-          opacity,
-        }}
+        style={{ opacity }}
       />
     </motion.div>
   );

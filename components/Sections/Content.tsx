@@ -6,6 +6,7 @@ import { StickyVideo } from "../ui/Sticky";
 import HeroVideo from "./HeroVideo";
 import Popular from "../Products/Popular";
 import Feature from "./Feature";
+import TextBlock from "../ui/TextBlock";
 
 const Content = () => {
   return (
@@ -20,6 +21,13 @@ const Content = () => {
           {/* <BlogHome /> */}
         </div>
       </TextParallaxContentVideo>
+
+      <TextBlock
+        paragraphs={[
+          "Presented at the mythical Villa d’Este, on the banks of Lake Como in Italy, the CHANEL Cruise 2025/26 collection is an an ode to cinematic glamour and to the joy of getting dressed up to be noticed. On the terrace of the legendary hotel, a radiant elsewhere takes shape.",
+          "Strings of beads, black sunglasses and long gloves, sequins and lamé reflect the Hollywood charm of the collection. Taffeta ball gowns, backless jumpsuit, and long capes: a carefree elegance and a spirit of celebration run through the collection.",
+        ]}
+      />
 
       <TextParallaxContentVideo
         videoUrl="/videos/collection/collection4.mp4"

@@ -1,12 +1,14 @@
-import Content from '@/components/Sections/Content'
-import React from 'react'
+import Cookie from "@/components/Popup/Cookie";
+import Content from "@/components/Sections/Content";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-        <Content />
+      <Content />
+      <Cookie />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

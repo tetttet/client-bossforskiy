@@ -9,6 +9,7 @@ import Link from "next/link";
 import SearchComponent from "../ui/Search";
 import Overlay from "../ui/Overlay";
 import AnimatedDropdown from "../ui/AnimatedDropdown";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,10 +49,12 @@ export default function Header() {
       <Overlay isVisible={showSearch} onClose={() => setShowSearch(false)} />
 
       <header className={headerClass}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="relative h-28 max-w-7xl mx-auto flex items-center justify-between">
+          {/* Левая часть */}
           <div
-            className="flex items-center gap-2 cursor-pointer select-none group"
+            className="flex items-center gap-2 cursor-pointer select-none group flex-1"
             onClick={() => {
+              setShowSearch(false);
               if (window.scrollY === 0) {
                 setMenuOpen((prev) => !prev);
               } else {
@@ -61,7 +64,6 @@ export default function Header() {
                     setMenuOpen((prev) => !prev);
                   }
                 };
-
                 window.addEventListener("scroll", handleScroll);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
@@ -77,7 +79,7 @@ export default function Header() {
                   exit="exit"
                   transition={{ duration: 0.2 }}
                 >
-                  <X className="w-6 h-6 sm:w-7 sm:h-7 group-hover:text-black" />
+                  <X className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700 group-hover:text-black" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -88,7 +90,7 @@ export default function Header() {
                   exit="exit"
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="w-6 h-6 sm:w-7 sm:h-7 group-hover:text-black" />
+                  <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700 group-hover:text-black" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -99,22 +101,31 @@ export default function Header() {
               exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.2 }}
               className="text-base font-medium group-hover:text-black"
-            >
-              {menuOpen ? "Close" : "Menu"}
-            </motion.span>
+            />
           </div>
 
+          {/* Центр: Лого */}
           <Link
             href="/bossforskiy/home"
-            className="hidden font-inter lg:flex justify-center items-center uppercase group-hover:text-black"
+            onClick={() => setMenuOpen(false)}
+            className="absolute left-1/2 transform -translate-x-1/2 header-font uppercase text-center"
           >
-            Bossforskiy
+            {/* Bossforskiy */}
+            <Image
+              src="/logo-removed-bg.png"
+              alt="Bossforskiy Logo"
+              width={150}
+              height={150}
+              className="h-32 sm:h-36 object-contain"
+            />
           </Link>
 
-          <div className="flex items-center gap-4 group-hover:text-black text-sm sm:text-base font-normal">
+          {/* Правая часть */}
+          <div className="flex items-center gap-4 text-sm sm:text-base font-normal flex-1 justify-end">
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
+                setMenuOpen(false);
                 if (window.scrollY === 0) {
                   setShowSearch((prev) => !prev);
                 } else {
@@ -124,7 +135,6 @@ export default function Header() {
                       setShowSearch((prev) => !prev);
                     }
                   };
-
                   window.addEventListener("scroll", handleScroll);
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
@@ -133,7 +143,11 @@ export default function Header() {
               <Search className="w-5 h-5" />
             </div>
             <Link
-              href="/wishlist"
+              href="/bossforskiy/wishlist"
+              onClick={() => {
+                setMenuOpen(false);
+                setShowSearch(false);
+              }}
               className="flex items-center gap-1 cursor-pointer"
             >
               <Heart className="w-5 h-5" />
@@ -143,14 +157,16 @@ export default function Header() {
               onClick={() => {
                 if (window.scrollY === 0) {
                   setShowCart((prev) => !prev);
+                  setMenuOpen(false);
+                  setShowSearch(false);
                 } else {
                   const handleScroll = () => {
                     if (window.scrollY === 0) {
                       window.removeEventListener("scroll", handleScroll);
                       setShowCart((prev) => !prev);
+                      setMenuOpen(false);
                     }
                   };
-
                   window.addEventListener("scroll", handleScroll);
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
@@ -169,11 +185,11 @@ export default function Header() {
       </header>
 
       <AnimatedDropdown isOpen={menuOpen}>
-        <SubHeader />
+        <SubHeader setMenuOpen={setMenuOpen} />
       </AnimatedDropdown>
 
       <AnimatedDropdown isOpen={showSearch}>
-        <SearchComponent />
+        <SearchComponent setShowSearch={setShowSearch} />
       </AnimatedDropdown>
     </>
   );

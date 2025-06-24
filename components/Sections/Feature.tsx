@@ -10,7 +10,7 @@ const Feature = () => {
       {/* Видео фон с параллаксом */}
       <div ref={videoContainerRef} className="absolute inset-0 z-0 h-[125%]">
         <video
-          src="videos/v3.mp4"
+          src="/videos/v3.mp4"
           typeof="video/mp4"
           autoPlay
           loop

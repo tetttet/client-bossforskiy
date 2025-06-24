@@ -52,7 +52,7 @@ const Cart = ({ onClose }: { onClose: () => void }) => {
 
           {/* Сайдбар */}
           <motion.div
-            className="ml-auto h-full w-[90%] sm:w-[420px] bg-gradient-to-b from-[#ffffff] via-[#ede5dc] to-[#efdcc8] p-8 shadow-2xl relative flex flex-col"
+            className="ml-auto h-full w-[100%] sm:w-[420px] bg-gradient-to-b from-[#ffffff] via-[#ede5dc] to-[#efdcc8] p-8 shadow-2xl relative flex flex-col"
             variants={sidebar}
             initial="hidden"
             animate="visible"

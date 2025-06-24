@@ -3,9 +3,9 @@ import { useSearchParams } from "next/navigation";
 import { products } from "@/constant/products";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-const SearchResultsPage = () => {
+const SearchResults = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
 
@@ -105,6 +105,14 @@ const SearchResultsPage = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const SearchResultsPage = () => {
+  return (
+    <Suspense fallback={<div className="p-4">Loading search...</div>}>
+      <SearchResults />
+    </Suspense>
   );
 };
 

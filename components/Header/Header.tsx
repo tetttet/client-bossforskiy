@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Menu, Heart, X, Search, ShoppingBag } from "lucide-react";
 import SubHeader from "./SubHeader";
 import { motion, AnimatePresence } from "framer-motion";
@@ -189,7 +189,9 @@ export default function Header() {
       </AnimatedDropdown>
 
       <AnimatedDropdown isOpen={showSearch}>
-        <SearchComponent setShowSearch={setShowSearch} />
+        <Suspense fallback={<div className="p-4">Loading search...</div>}>
+          <SearchComponent setShowSearch={setShowSearch} />
+        </Suspense>
       </AnimatedDropdown>
     </>
   );

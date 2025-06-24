@@ -36,7 +36,7 @@ interface Product {
 }
 
 // Функция для получения курса по слагу
-export const getCourseBySlug = (slug: string) => {
+const getCourseBySlug = (slug: string) => {
   return products.find(
     (product) => product.name.toLowerCase().replace(/\s+/g, "-") === slug
   );

@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BOSSFORSKIY Official Website: Beauty Fashion Collection",
-  description: "BOSSFORSKIY Luxury – Where Elegance Meets Cinematic Glamour. Discover high-end designer fashion, luxury lifestyle, and cinematic fashion collections.",
+  description:
+    "BOSSFORSKIY Luxury – Where Elegance Meets Cinematic Glamour. Discover high-end designer fashion, luxury lifestyle, and cinematic fashion collections.",
   keywords: [
     "BOSSFORSKIY",
     "Luxury Fashion",
@@ -38,7 +39,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bossforskiy.com"),
   openGraph: {
     title: "BOSSFORSKIY Luxury Fashion Collection",
-    description: "Explore BOSSFORSKIY's high-end designer clothing, cinematic glamour, and timeless elegance.",
+    description:
+      "Explore BOSSFORSKIY's high-end designer clothing, cinematic glamour, and timeless elegance.",
     url: "https://bossforskiy.com",
     siteName: "BOSSFORSKIY",
     images: [
@@ -87,23 +89,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://bossforskiy.com",
     languages: {
-      "en": "https://bossforskiy.com/en",
-      "ru": "https://bossforskiy.com/ru",
-      "ar": "https://bossforskiy.com/ar",
-      "tr": "https://bossforskiy.com/tr",
+      en: "https://bossforskiy.com/en",
+      ru: "https://bossforskiy.com/ru",
+      ar: "https://bossforskiy.com/ar",
+      tr: "https://bossforskiy.com/tr",
     },
   },
 };
 
-
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
   params: { locale: string };
-}>) {
+}
+
+export default async function RootLayout({ children, params }: LayoutProps) {
   const { locale } = params;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }

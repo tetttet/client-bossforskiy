@@ -14,7 +14,6 @@ const SearchResults = () => {
     name: string;
     description?: string;
     thumbnail: string;
-    // add other fields if needed
   };
 
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -95,7 +94,7 @@ const SearchResults = () => {
                   {product.description}
                 </p>
                 <div className="mt-3">
-                  <span className="text-noir text-xs tracking-widest border-b border-transparent group-hover:border-noir transition-all duration-300">
+                  <span className="hover:underline text-noir text-xs tracking-widest border-b border-transparent group-hover:border-noir transition-all duration-300">
                     VIEW DETAILS
                   </span>
                 </div>

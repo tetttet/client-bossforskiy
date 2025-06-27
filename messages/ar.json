@@ -1,0 +1,32 @@
+{
+    "languages": {
+        "en": "الولايات المتحدة - الإنجليزية (الولايات المتحدة) (US)",
+        "ar": "العربية (AR)",
+        "ru": "روسيا - الروسية (RU)",
+        "kk": "كازاخستان - الكازاخية (KK)",
+        "tr": "تركيا - التركية (TR)"
+    },
+    "IntroPage": {
+        "selectLanguage": "اختر لغتك",
+        "selectRegion": "اختر منطقتك",
+        "backToRegion": "العودة إلى المناطق"
+    },
+    "Header": {
+        "submenu": {
+            "aboutUs": "معلومات عنا",
+            "ourPhilosophy": "فلسفتنا",
+            "bossforskiyFamily": "عائلة Bossforskiy"
+        },
+        "links": {
+            "newArrivals": "الوافدون الجدد",
+            "bestSellers": "الأكثر مبيعًا",
+            "giftSets": "مجموعات الهدايا"
+        },
+        "menu": {
+            "skincare": "العناية بالبشرة",
+            "makeup": "المكياج",
+            "fragrances": "العطور"
+        },
+        "discoverTheLatest": "اكتشف أحدث صيحات الرفاهية"
+    }
+}

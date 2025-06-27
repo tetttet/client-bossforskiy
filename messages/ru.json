@@ -1,0 +1,32 @@
+{
+    "languages": {
+        "en": "Соединенные Штаты - Английский (США)",
+        "ar": "Саудовская Аравия - Арабский (АР)",
+        "ru": "Россия - Русский (РУ)",
+        "kk": "Казахстан - Казахский (КК)",
+        "tr": "Турция - Турецкий (ТР)"
+    },
+    "IntroPage": {
+        "selectLanguage": "ВЫБЕРИТЕ ВАШ ЯЗЫК",
+        "selectRegion": "ВЫБЕРИТЕ ВАШ РЕГИОН",
+        "backToRegion": "Назад к регионам"
+    },
+    "Header": {
+        "submenu": {
+            "aboutUs": "О нас",
+            "ourPhilosophy": "Наша философия",
+            "bossforskiyFamily": "Семья Bossforskiy"
+        },
+        "links": {
+            "newArrivals": "Новинки",
+            "bestSellers": "Бестселлеры",
+            "giftSets": "Подарочные наборы"
+        },
+        "menu": {
+            "skincare": "Уход за кожей",
+            "makeup": "Макияж",
+            "fragrances": "Ароматы"
+        },
+        "discoverTheLatest": "Откройте для себя последние новинки в мире роскоши"
+    }
+}

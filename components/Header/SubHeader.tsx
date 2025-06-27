@@ -8,6 +8,7 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { products } from "@/constant/products";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type SubHeaderProps = {
   setMenuOpen: (open: boolean) => void;
@@ -33,26 +34,28 @@ const SubHeader = ({ setMenuOpen }: SubHeaderProps) => {
     },
   });
 
-  const menu = ["Skincare", "Makeup", "Fragrances"];
+   const t = useTranslations();
+
+  const menu = [t("Header.menu.skincare"), t("Header.menu.makeup"), t("Header.menu.fragrances")];
   const submenu = [
     {
-      title: "About Us",
+      title: t("Header.submenu.aboutUs"),
       link: "/bossforskiy/about",
     },
     {
-      title: "Our Philosophy",
+      title: t("Header.submenu.ourPhilosophy"),
       link: "/bossforskiy/fashion/collections",
     },
     {
-      title: "Bossforskiy Family",
+      title: t("Header.submenu.bossforskiyFamily"),
       link: "/bossforskiy/bossforskiy-family",
     },
   ];
 
   const links = [
-    { title: "New Arrivals", link: "/bossforskiy/new-arrivals" },
-    { title: "Best Sellers", link: "/bossforskiy/best-sellers" },
-    { title: "Gift Sets", link: "/bossforskiy/gift-sets" },
+    { title: t("Header.links.newArrivals"), link: "/bossforskiy/new-arrivals" },
+    { title: t("Header.links.bestSellers"), link: "/bossforskiy/best-sellers" },
+    { title: t("Header.links.giftSets"), link: "/bossforskiy/gift-sets" },
   ];
 
   const bottomLinks = [
@@ -217,7 +220,7 @@ const SubHeader = ({ setMenuOpen }: SubHeaderProps) => {
 
         <main className="relative flex-1 p-2 md:p-6 w-full md:w-2/3">
           <span className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 block ml-4">
-            Discover the Latest in Luxury
+            {t("Header.discoverTheLatest")}
           </span>
           <div ref={sliderRef} className="keen-slider">
             {products.map((watch, i) => (

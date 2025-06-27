@@ -1,0 +1,32 @@
+{
+    "languages": {
+        "en": "United States - English (US)",
+        "ar": "Saudi Arabia - Arabic (AR)",
+        "ru": "Russia - Russian (RU)",
+        "kk": "Kazakhstan - Kazakh (KK)",
+        "tr": "Turkey - Turkish (TR)"
+    },
+    "IntroPage": {
+        "selectLanguage": "SELECT YOUR LANGUAGE",
+        "selectRegion": "SELECT YOUR REGION",
+        "backToRegion": "Back to regions"
+    },
+    "Header": {
+        "submenu": {
+            "aboutUs": "About Us",
+            "ourPhilosophy": "Our Philosophy",
+            "bossforskiyFamily": "Bossforskiy Family"
+        },
+        "links": {
+            "newArrivals": "New Arrivals",
+            "bestSellers": "Best Sellers",
+            "giftSets": "Gift Sets"
+        },
+        "menu": {
+            "skincare": "Skincare",
+            "makeup": "Makeup",
+            "fragrances": "Fragrances"
+        },
+        "discoverTheLatest": "Discover the Latest in Luxury"
+    }
+}

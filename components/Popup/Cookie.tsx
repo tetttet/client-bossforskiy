@@ -52,33 +52,33 @@ const Cookie = () => {
               <X className="w-5 h-5 text-gray-500 transform transition-transform duration-300 group-hover:rotate-90" />
             </button>
 
-            <h2 className="text-2xl font-light tracking-wider text-center mb-6 text-gray-800">
+            <h2 className="text-2xl cookie-text tracking-wider text-center mb-6 text-gray-800">
               Welcome To Bossforskiy.com
             </h2>
 
-            <p className="text-sm text-gray-600 text-center mb-6 leading-relaxed">
+            <p className="text-sm cookie-desc text-center mb-6 leading-relaxed">
               This website uses cookies to enhance your browsing experience. By
-              clicking &quot;Yes, Continue&quot;, you agree to our use of
+              clicking <span className="font-bold">&quot;Yes, Continue&quot;</span>, you agree to our use of
               cookies and similar technologies.
             </p>
 
             <div className="flex flex-col space-y-3">
               <button
-                className="px-6 py-3 bg-transparent border border-gray-400 text-gray-800 text-sm font-medium hover:bg-gray-50 transition-colors"
+                className="px-6 py-3 bg-transparent border border-gray-400 lang-name-hover font-medium hover:bg-gray-50 transition-colors"
                 onClick={handleClose}
               >
                 No, I want to know more.
               </button>
 
               <button
-                className="px-6 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
+                className="px-6 py-3 bg-black lang-name-white text-sm font-medium hover:bg-gray-800 transition-colors"
                 onClick={handleAccept}
               >
                 Yes, Continue
               </button>
             </div>
 
-            <p className="text-xs text-gray-500 text-center mt-6 cursor-pointer hover:underline">
+            <p className="text-xs privacy-text-sm text-center mt-6 cursor-pointer hover:underline">
               privacy policy and terms of service
             </p>
           </motion.div>

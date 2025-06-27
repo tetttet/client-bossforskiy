@@ -53,7 +53,7 @@ const BlogHome = () => {
           </div>
 
           {/* QR Code */}
-          <img src={data[0].qrCode} alt="QR code" className="w-24 mt-8" />
+          <Image width={96} height={96} src={data[0].qrCode} alt="QR code" className="w-24 mt-8" />
         </div>
       </div>
     </section>

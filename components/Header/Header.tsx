@@ -10,6 +10,7 @@ import SearchComponent from "../ui/Search";
 import Overlay from "../ui/Overlay";
 import AnimatedDropdown from "../ui/AnimatedDropdown";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,13 +44,16 @@ export default function Header() {
     hover:bg-white hover:text-black
   `;
 
+  const currentLocale = useLocale();
+  console.log("Current Locale:", currentLocale);
+
   return (
     <>
       <Overlay isVisible={menuOpen} onClose={() => setMenuOpen(false)} />
       <Overlay isVisible={showSearch} onClose={() => setShowSearch(false)} />
 
       <header className={headerClass}>
-        <div className="relative h-28 max-w-7xl mx-auto flex items-center justify-between">
+        <div className="relative h-20 max-w-7xl mx-auto flex items-center justify-between">
           {/* Левая часть */}
           <div
             className="flex items-center gap-2 cursor-pointer select-none group flex-1"
@@ -107,17 +111,21 @@ export default function Header() {
           {/* Центр: Лого */}
           <Link
             href="/bossforskiy/home"
+            dir={currentLocale === "ar" ? "ltr" : undefined}
             onClick={() => setMenuOpen(false)}
-            className="absolute left-1/2 transform -translate-x-1/2 header-font uppercase text-center"
+            className="absolute left-1/2 transform -translate-x-1/2 header-font uppercase flex items-center space-x-2 text-center"
           >
-            {/* Bossforskiy */}
+            <p className="hidden sm:block">BOSS</p>
             <Image
-              src="/logo-removed-bg.png"
+              src="/icon-removed-bg.png"
               alt="Bossforskiy Logo"
-              width={150}
-              height={150}
-              className="h-32 sm:h-36 object-contain"
+              width={60}
+              height={60}
+              className="object-contain hidden sm:block"
             />
+            <p className="hidden sm:block">FORSKIY</p>
+
+            <p className="block sm:hidden">BOSSFORSKIY</p>
           </Link>
 
           {/* Правая часть */}

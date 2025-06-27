@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer/Footer";
+import Ft from "@/components/Footer/Ft";
 import Header from "@/components/Header/Header";
 
 export default function BossforskiyLayout({
@@ -11,6 +12,7 @@ export default function BossforskiyLayout({
       <Header />
       {children}
       <Footer />
+      <Ft />
     </>
   );
 }

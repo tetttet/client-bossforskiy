@@ -9,7 +9,6 @@ import Link from "next/link";
 import SearchComponent from "../ui/Search";
 import Overlay from "../ui/Overlay";
 import AnimatedDropdown from "../ui/AnimatedDropdown";
-import Image from "next/image";
 import { useLocale } from "next-intl";
 
 export default function Header() {
@@ -94,7 +93,7 @@ export default function Header() {
                   exit="exit"
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700 group-hover:text-black" />
+                  <Menu className="w-6 h-6 sm:w-7 sm:h-7 group-hover:text-black" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -113,9 +112,9 @@ export default function Header() {
             href="/bossforskiy/home"
             dir={currentLocale === "ar" ? "ltr" : undefined}
             onClick={() => setMenuOpen(false)}
-            className="absolute left-1/2 transform -translate-x-1/2 header-font uppercase flex items-center space-x-2 text-center"
+            className="absolute left-1/2 transform -translate-x-1/2 uppercase flex items-center space-x-2 text-center"
           >
-            <p className="hidden sm:block">BOSS</p>
+            {/* <p className="hidden sm:block">BOSS</p>
             <Image
               src="/icon-removed-bg.png"
               alt="Bossforskiy Logo"
@@ -125,7 +124,10 @@ export default function Header() {
             />
             <p className="hidden sm:block">FORSKIY</p>
 
-            <p className="block sm:hidden">BOSSFORSKIY</p>
+            <p className="block sm:hidden">BOSSFORSKIY</p> */}
+            <p className="font-sans font-semibold tracking-wider uppercase text-[32px] no-underline transition-colors duration-300">
+              BOSSFORSKIY
+            </p>
           </Link>
 
           {/* Правая часть */}

@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 👑 BOSSFORSKIY Official Website
 
-## Getting Started
+Welcome to the official monorepo for **BOSSFORSKIY Luxury Fashion** — a high-end cinematic fashion brand blending elegance, modernity, and glamour. This is the frontend and backend source code for the multilingual, SEO-optimized, and mobile-first web platform built using **Next.js**, **TypeScript**, **Tailwind CSS**, and more.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 [https://bossforskiy.com](https://bossforskiy.com)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Preview
 
-## Learn More
+![Website Preview](public/logo.jpeg)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🔤 Multilingual (EN / RU / TR) with `next-intl`
+- ⚡ Lightning-fast Next.js 14 with App Router
+- 💅 Beautiful UI with TailwindCSS & Framer Motion
+- 🎥 Cinematic video backgrounds
+- 🧠 AI-powered assistant integration (optional)
+- 🧭 SEO-optimized with Open Graph, Twitter Cards, and Sitemap
+- 🧼 Clean code, reusable components, and file-based routing
+- 📱 Mobile-first responsive design
+- 🔒 Accessibility (a11y) and dark mode ready
+- 📂 Structured layout with reusable layouts and loaders
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Tech             | Purpose                        |
+|------------------|--------------------------------|
+| **Next.js 14**   | React framework with SSR & SSG |
+| **TypeScript**   | Type-safe development          |
+| **Tailwind CSS** | Utility-first CSS styling      |
+| **Framer Motion**| Smooth animations              |
+| **next-intl**    | Internationalization           |
+| **Open Graph / Metadata** | SEO, social previews  |
+| **PostgreSQL + Prisma** | (Optional: backend)     |
+
+---
+
+## 🗂️ Project Structure
+

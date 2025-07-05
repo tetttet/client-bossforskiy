@@ -6,7 +6,7 @@ Welcome to the official monorepo for **BOSSFORSKIY Luxury Fashion** — a high-e
 
 ## 🌐 Live Website
 
-👉 [https://bossforskiy.com](https://bossforskiy.com)
+👉 [https://bossforskiy.com](https://client-bossforskiy.vercel.app)
 
 ---
 

@@ -227,6 +227,28 @@ footer .card p {
   text-decoration: none;
   transition: color 0.3s;
 }
+.text-header-logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #222222;
+  text-transform: uppercase;
+  font-size: 2.0em;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .text-header-logo {
+    font-size: 1.5em;
+    margin-left: -20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .text-header-logo {
+    font-size: 1.4em;
+    margin-left: -50px;
+  }
+}
 .hero-title-text {
   font-family: "Inter", sans-serif;
   font-weight: 600;

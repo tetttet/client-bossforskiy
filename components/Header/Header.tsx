@@ -125,7 +125,7 @@ export default function Header() {
             <p className="hidden sm:block">FORSKIY</p>
 
             <p className="block sm:hidden">BOSSFORSKIY</p> */}
-            <p className="font-sans font-semibold tracking-wider uppercase text-[32px] no-underline transition-colors duration-300">
+            <p className="text-header-logo">
               BOSSFORSKIY
             </p>
           </Link>

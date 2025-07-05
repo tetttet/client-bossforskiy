@@ -235,7 +235,7 @@ const SubHeader = ({ setMenuOpen }: SubHeaderProps) => {
                     .replace(/\s+/g, "-")}`}
                 >
                   <div className="p-2 md:p-4 flex flex-col items-center space-y-2 md:space-y-4 w-full md:w-72">
-                    <div className="relative w-full h-48 md:h-80 rounded-xl md:rounded-2xl overflow-hidden">
+                    <div className="relative w-full h-48 md:h-80 overflow-hidden">
                       <Image
                         src={watch.thumbnail}
                         alt={watch.name}

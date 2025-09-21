@@ -1,0 +1,22 @@
+{
+  "submenuTop": {
+    "skincare": "Skincare",
+    "creamSticks": "Cream Sticks",
+    "fragrances": "Fragrances"
+  },
+  "submenu": {
+    "aboutUs": "About us",
+    "ourPhilosophy": "Our Philosophy",
+    "bossforskiyFamily": "Bossforskiy Family"
+  },
+  "links": {
+    "onlineShopping": "Online shopping",
+    "cart": "Cart"
+  },
+  "productSlider": {
+    "title": "Unveil the World of Bossforskiy"
+  },
+  "footerLinks": {
+    "address": "Address"
+  }
+}

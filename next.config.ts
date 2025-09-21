@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   /* images.unsplash.com */
   images: {
-    domains: ["images.unsplash.com", "placekitten.com", "plus.unsplash.com", "www.chanel.com"],
+    domains: ["images.unsplash.com", "placekitten.com", "plus.unsplash.com", "www.chanel.com", "api.qrserver.com"],
   },
 };
 

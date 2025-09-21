@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
 const BreadCrumb = () => {
+  const t = useTranslations("About");
   return (
     <section className="relative w-full h-screen overflow-hidden">
       <Image
@@ -13,14 +15,15 @@ const BreadCrumb = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-wide text-black">
+        <h1 className="text-5xl uppercase md:text-6xl font-bold tracking-wide text-black">
           Bossforskiy
         </h1>
-        <p className="mt-4 text-sm md:text-base font-medium text-black uppercase tracking-widest">
-          Comfort and style in every detail
+        <br />
+        <p className="text-sm !mb-1 md:text-base font-medium text-black uppercase tracking-widest">
+          {t("breadCrumb1")}
         </p>
         <p className="text-sm md:text-base font-medium text-black uppercase tracking-widest">
-          Luxury brand that embodies the essence of elegance and sophistication.
+          {t("breadCrumb2")}
         </p>
       </div>
     </section>

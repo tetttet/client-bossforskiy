@@ -1,0 +1,22 @@
+{
+  "Popular": {
+    "header": "Özel Ürünlerimiz",
+    "viewMore": "Daha Fazla Gör",
+    "addToCart": "Sepete Ekle",
+    "wishlist": "İstek Listesi",
+    "products": {
+      "green": {
+        "title": "Yeşil Nemlendirici Stick",
+        "description": "Zümrüt - yasemin esintisi, saf ve nazik."
+      },
+      "gold": {
+        "title": "Altın Nemlendirici Stick",
+        "description": "Aura — derin doğu kokusu, zengin ve zamansız."
+      },
+      "pink": {
+        "title": "Pembe Nemlendirici Stick",
+        "description": "Frezya - hafif ve zarif bir çiçek örtüsü."
+      }
+    }
+  }
+}

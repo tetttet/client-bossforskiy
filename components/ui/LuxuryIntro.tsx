@@ -1,53 +1,57 @@
 "use client";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { useRouter } from "next/navigation"; // Импорт useRouter
-import { useLocale, useTranslations } from "next-intl";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const LuxuryIntro = () => {
-  const router = useRouter(); // Инициализация роутера
-  const t = useTranslations();
-
-  const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
-  const [step, setStep] = useState<"region" | "language">("region");
+  const router = useRouter();
+  const t = useTranslations("Intro");
 
   const regions = [
-    { code: "FR", name: "France" },
-    { code: "US", name: "United States" },
-    { code: "UK", name: "United Kingdom" },
-    { code: "IT", name: "Italy" },
-    { code: "JP", name: "Japan" },
-    { code: "CN", name: "China" },
+    { code: "TR", name: "Turkiye" },
+    { code: "OTHER", name: "Other" },
   ];
 
   const languages = [
+    { code: "tr", name: "Türkçe" },
     { code: "en", name: "English" },
-    { code: "ru", name: "Русский" },
-    { code: "ar", name: "العربية" },
-    { code: "it", name: "Italiano" },
-    { code: "ja", name: "日本語" },
-    { code: "zh", name: "中文" },
   ];
 
-  const currentLocale = useLocale();
-  const [selectedLanguage, setSelectedLanguage] =
-    useState<string>(currentLocale);
+  // Removed unused selectedRegion state
+  const [step, setStep] = useState<"region" | "language">("region");
+  const [loaded, setLoaded] = useState(false);
 
-  console.log("selectedLanguage:", selectedLanguage);
+  // При загрузке проверяем localStorage
+  useEffect(() => {
+    const storedRegion = localStorage.getItem("region");
+    const storedLanguage = localStorage.getItem("language");
+
+    if (storedRegion && storedLanguage) {
+      // Если есть данные, сразу редирект
+      const segments = window.location.pathname.split("/");
+      segments[1] = storedLanguage;
+      router.replace(`${segments.join("/") || "/"}/bossforskiy/home`);
+    } else {
+      setLoaded(true);
+    }
+  }, [router]);
 
   const handleRegionSelect = (region: string) => {
-    setSelectedRegion(region);
+    localStorage.setItem("region", region);
     setStep("language");
   };
 
   const handleLanguageSelect = (language: string) => {
-    setSelectedLanguage(language);
-    console.log(`Selected: ${selectedRegion}, ${language}`);
+    localStorage.setItem("language", language);
+
     const segments = window.location.pathname.split("/");
     segments[1] = language;
     router.push(`${segments.join("/") || "/"}/bossforskiy/home`);
   };
+  // Ждем загрузки localStorage
+  if (!loaded) return null;
 
   return (
     <div className="fixed inset-0 bg-white flex items-center justify-center p-8">

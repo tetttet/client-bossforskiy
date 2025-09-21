@@ -65,12 +65,12 @@ const Cart = ({ onClose }: { onClose: () => void }) => {
               ✕
             </button>
 
-            <h2 className="text-2xl font-medium tracking-wide mb-6 border-b pb-2 border-gray-200 uppercase">
+            <h1 className="link font-medium tracking-wide mb-6 border-b pb-2 border-gray-200 uppercase">
               Shopping Bag
-            </h2>
+            </h1>
 
             <div className="flex-1 text-gray-600 text-sm text-center flex items-center justify-center">
-              <p className="italic font-medium">Your bag is empty.</p>
+              <p className="font-medium">Your bag is empty.</p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-gray-200 text-sm text-gray-500">

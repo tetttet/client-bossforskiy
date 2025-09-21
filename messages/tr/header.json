@@ -1,0 +1,22 @@
+{
+  "submenuTop": {
+    "skincare": "Cilt Bakımı",
+    "creamSticks": "Krem Çubukları",
+    "fragrances": "Parfümler"
+  },
+  "submenu": {
+    "aboutUs": "Hakkımızda",
+    "ourPhilosophy": "Felsefemiz",
+    "bossforskiyFamily": "Bossforskiy Ailesi"
+  },
+  "links": {
+    "onlineShopping": "Çevrimiçi Alışveriş",
+    "cart": "Sepet"
+  },
+  "productSlider": {
+    "title": "Bossforskiy Dünyasını Keşfedin"
+  },
+  "footerLinks": {
+    "address": "Adres"
+  }
+}

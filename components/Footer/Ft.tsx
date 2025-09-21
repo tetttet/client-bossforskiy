@@ -13,7 +13,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 const Ft = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const t = useTranslations();
+  const t = useTranslations("Intro");
   const currentLocale = useLocale();
 
   console.log("Current Locale:", currentLocale);

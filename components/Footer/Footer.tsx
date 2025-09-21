@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white pt-12 pb-8 px-4">
       {/* Logo */}
-      <h1 className="font-footer uppercase text-[38px] mb-44 mt-24 text-center">
+      <h1 className="font-footer uppercase mb-24 mt-12 text-center">
         Bossforskiy
       </h1>
 
@@ -18,52 +19,32 @@ const Footer = () => {
           <ul className="space-y-2 text-sm text-gray">
             <li>
               <a href="#" className="hover:underline">
-                Haute Couture
+                About Us
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Fashion
+                Collection Overview
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                High Jewelry
+                New Arrivals
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Fine Jewelry
+                Pre-Collections
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Watches
+                Our Philosophy
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Eyewear
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Fragrance
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Makeup
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Skincare
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Sitemap
+                Bossforskiy family
               </a>
             </li>
           </ul>
@@ -92,17 +73,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Returns
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
                 FAQ
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Care & Services
               </a>
             </li>
           </ul>
@@ -113,84 +84,47 @@ const Footer = () => {
           <h5 className="font-sans font-semibold text-md uppercase tracking-wider">
             BOUTIQUE SERVICES
           </h5>
-          <ul className="space-y-2 text-sm text-gray">
-            <li>
-              <a href="#" className="hover:underline">
-                Store Locator
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Book an Appointment
-              </a>
-            </li>
-          </ul>
+          <div className="flex">
+            <Image
+              src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com"
+              alt="QR Code"
+              className="shadow-md"
+              width={150}
+              height={150}
+            />
+          </div>
+          <p className="text-sm text-gray">Scan to explore</p>
         </div>
 
         {/* Column 4 */}
         <div className="space-y-4">
           <h5 className="font-sans font-semibold text-md uppercase tracking-wider">
-            THE HOUSE OF Bossforskiy
+            CONTACTS
           </h5>
           <ul className="space-y-2 text-sm text-gray">
             <li>
               <a href="#" className="hover:underline">
-                Carrers
+                Contacts
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Legal
+                Maps & Directions
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Privacy
+                Privacy Policy
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Information About CCPA Do Not Sell
+                Terms & Conditions
               </a>
             </li>
-            <li>
+            <li className="max-w-[200px]">
               <a href="#" className="hover:underline">
-                Report to Society
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Fighting Counterfeits
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Accessibility
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                California Transparency in Supply Chains
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                CHANEL Racial Justice Efforts
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                CHANEL COVID-19 Relief Efforts
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                CHANEL Supports Black Ambition
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Transparency in Coverage
+                Address - 123 Fashion St, Style City, Country
               </a>
             </li>
           </ul>

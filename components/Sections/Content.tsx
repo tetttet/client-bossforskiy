@@ -5,34 +5,36 @@ import { StickyVideo } from "../ui/Sticky";
 // import BlogHome from "../Blog/BlogHome";
 import HeroVideo from "./HeroVideo";
 import Popular from "../Products/Popular";
-import Feature from "./Feature";
+// import Feature from "./Feature";
 import TextBlock from "../ui/TextBlock";
+import { useTranslations } from "next-intl";
 
 const Content = () => {
+  const t = useTranslations("Content.Content");
+
   return (
     <div className="">
       <TextParallaxContentVideo
         videoUrl="/videos/collection/collection1.mp4"
-        subheading="Bossforskiy"
-        heading="Создано для вашей красоты"
+        subheading={t("bossforskiy.subheading")}
+        heading={t("bossforskiy.heading")}
       >
         <div className="bg-white-primary">
           <HeroVideo />
-          {/* <BlogHome /> */}
         </div>
       </TextParallaxContentVideo>
 
       <TextBlock
         paragraphs={[
-          "Presented at the mythical Villa d’Este, on the banks of Lake Como in Italy, the CHANEL Cruise 2025/26 collection is an an ode to cinematic glamour and to the joy of getting dressed up to be noticed. On the terrace of the legendary hotel, a radiant elsewhere takes shape.",
-          "Strings of beads, black sunglasses and long gloves, sequins and lamé reflect the Hollywood charm of the collection. Taffeta ball gowns, backless jumpsuit, and long capes: a carefree elegance and a spirit of celebration run through the collection.",
+          t("bossforskiy.paragraph1"),
+          t("bossforskiy.paragraph2"),
         ]}
       />
 
       <TextParallaxContentVideo
         videoUrl="/videos/collection/collection4.mp4"
-        subheading="Качество"
-        heading="Без компромиссов"
+        subheading={t("quality.subheading")}
+        heading={t("quality.heading")}
       >
         <div className="bg-white-primary">
           <Popular />
@@ -41,12 +43,10 @@ const Content = () => {
 
       <TextParallaxContentVideo
         videoUrl="/videos/bs3.mp4"
-        subheading="Современность"
-        heading="Медицина нового поколения"
+        subheading={t("trust.subheading")}
+        heading={t("trust.heading")}
       >
-        <div className="bg-white-primary">
-          <Feature />
-        </div>
+        <></>
       </TextParallaxContentVideo>
     </div>
   );
@@ -107,10 +107,10 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+      <p className="text-center content-subheading uppercase md:text-3xl">
         {subheading}
       </p>
-      <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+      <p className="text-center !mt-6 content-heading md:text-5xl">{heading}</p>
     </motion.div>
   );
 };

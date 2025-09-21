@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "Rouge Dior Lipstick",
+    name: "Green Moisturizing Stick",
     brand: "Dior",
     subtitle: "Velvet Finish – Iconic Red 999",
     price: 49.0,
@@ -68,7 +68,7 @@ export const products = [
   },
   {
     id: 2,
-    name: "Sublimage Eye Cream",
+    name: "Golden Moisturizing Stick",
     thumbnail: "/images/header/hd2.avif",
     description: `
       Experience the luxury of Sublimage Eye Cream, a rich formula that targets dark circles and fine lines.
@@ -77,11 +77,11 @@ export const products = [
   },
   {
     id: 3,
-    name: "Black Orchid Perfume",
+    name: "Pink Moisturizing Stick",
     thumbnail: "/images/header/hd3.avif",
     description: `
-      Indulge in the opulence of Black Orchid, a fragrance that combines dark florals with rich spices.
-      Perfect for evening wear, it leaves a lasting impression with its unique blend of notes.
+      Indulge in the opulence of Pink Moisturizing Stick, a luxurious formula that hydrates and nourishes the lips.
+      Perfect for everyday wear, it leaves a soft, natural finish with a hint of color.
     `,
   },
   {

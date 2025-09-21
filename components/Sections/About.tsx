@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -136,64 +137,34 @@ const Title = styled.h1`
 `;
 
 const About = () => {
-  const img1 =
-    "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyZnVtZXxlbnwwfHwwfHx8MA%3D%3D";
-  const img2 =
-    "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyZnVtZXxlbnwwfHwwfHx8MA%3D%3D";
-  const img3 =
-    "https://plus.unsplash.com/premium_photo-1679106770086-f4355693be1b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyZnVtZXxlbnwwfHwwfHx8MA%3D%3D";
+  const t = useTranslations("About");
+
+  const img1 = "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=900&auto=format&fit=crop&q=60";
+  const img2 = "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=60";
+  const img3 = "https://plus.unsplash.com/premium_photo-1679106770086-f4355693be1b?w=900&auto=format&fit=crop&q=60";
 
   return (
     <div className="bg-gradient-to-b from-white to-gray-200 mt-5 md:mt-16">
       <Section id="fixed-target" className="about">
-        <Title
-          data-scroll
-          data-scroll-speed="-2"
-          data-scroll-direction="horizontal"
-        >
-          About Us
-        </Title>
-        <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-          We&apos;re fashion studio based in california. We create unique
-          designs that will blow your mind. We also design unique jewellary
-          pieces. Fashion is an ART that can not be grasped by everyone.
+        <Title>{t("title")}</Title>
+        <Left className="mt-0 lg:!mt-58" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+          <p>{t("text1")}</p>
           <br />
+          <p>{t("text2")}</p>
           <br />
-          We are very dedicated to making our products. We offer unique and
-          creative products to a wide range of people. We have a variety of
-          styles, but for most people, all of the options are in the box. We
-          specialize in making things that make you happy.
+          <p>{t("text3")}</p>
           <br />
-          <br />
-          We strive to build on our vision. As a fashion label, we do our best
-          to create amazing experiences for all people. We are always looking to
-          make something that is easy for everyone.
+          <p>{t("text4")}</p>
         </Left>
-
         <Right>
-          <Image width={400} height={600} src={img1} alt="About Us" />
-          <Image
-            width={400}
-            height={600}
-            className="small-img-1"
-            src={img2}
-            alt="About Us"
-            data-scroll
-            data-scroll-speed="5"
-          />
-          <Image
-            width={400}
-            height={600}
-            className="small-img-2"
-            src={img3}
-            alt="About Us"
-            data-scroll
-            data-scroll-speed="-2"
-          />
+          <Image width={400} height={600} src={img1} alt={t("title")} />
+          <Image width={400} height={600} className="small-img-1" src={img2} alt={t("title")} />
+          <Image width={400} height={600} className="small-img-2" src={img3} alt={t("title")} />
         </Right>
       </Section>
     </div>
   );
 };
+
 
 export default About;

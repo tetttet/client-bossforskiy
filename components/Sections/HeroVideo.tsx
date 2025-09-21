@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const HeroVideo = () => {
   const [isWideScreen, setIsWideScreen] = useState(false);
+  const t = useTranslations("Intro.heroVideo");
   const { scrollY } = useScroll();
 
   // Анимация отступов (изначально 5%, при скролле → 0%)
@@ -48,7 +50,7 @@ const HeroVideo = () => {
             playsInline
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-white text-4xl md:text-6xl font-serif tracking-widest uppercase bg-black/30 px-6 py-3">
+            <h1 className="text-white text-4xl md:text-6xl tracking-widest uppercase bg-black/30 px-6 py-3">
               Bossforskiy
             </h1>
           </div>
@@ -73,7 +75,7 @@ const HeroVideo = () => {
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <h1 className="text-white text-4xl md:text-6xl font-serif tracking-widest uppercase bg-black/30 px-6 py-3">
-                Luxury Brand
+                {t("exclusiveBrand")}
               </h1>
             </div>
           </motion.div>

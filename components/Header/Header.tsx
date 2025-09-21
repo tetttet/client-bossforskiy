@@ -10,12 +10,14 @@ import SearchComponent from "../ui/Search";
 import Overlay from "../ui/Overlay";
 import AnimatedDropdown from "../ui/AnimatedDropdown";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   const iconVariants = {
     initial: { opacity: 0, scale: 0.8 },
@@ -40,19 +42,29 @@ export default function Header() {
         : "bg-white text-black"
     }
     ${menuOpen ? "bg-white text-black" : ""}
+    ${hovered ? "bg-white text-black" : ""}
     hover:bg-white hover:text-black
   `;
 
   const currentLocale = useLocale();
-  console.log("Current Locale:", currentLocale);
 
+  // Логика выбора логотипа
+  const logoSrc = hovered
+    ? "/logo-black.svg" // при наведении всегда черный
+    : scrolled
+    ? "/logo-white.svg" // если скролл, но нет hover — белый
+    : "/logo-black.svg"; // иначе черный
   return (
     <>
       <Overlay isVisible={menuOpen} onClose={() => setMenuOpen(false)} />
       <Overlay isVisible={showSearch} onClose={() => setShowSearch(false)} />
 
-      <header className={headerClass}>
-        <div className="relative h-20 max-w-7xl mx-auto flex items-center justify-between">
+      <header
+        className={headerClass}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className="relative h-24 max-w-7xl mx-auto flex items-center justify-between">
           {/* Левая часть */}
           <div
             className="flex items-center gap-2 cursor-pointer select-none group flex-1"
@@ -97,14 +109,6 @@ export default function Header() {
                 </motion.div>
               )}
             </AnimatePresence>
-            <motion.span
-              key={menuOpen ? "close" : "menu"}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.2 }}
-              className="text-base font-medium group-hover:text-black"
-            />
           </div>
 
           {/* Центр: Лого */}
@@ -114,20 +118,13 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             className="absolute left-1/2 transform -translate-x-1/2 uppercase flex items-center space-x-2 text-center"
           >
-            {/* <p className="hidden sm:block">BOSS</p>
             <Image
-              src="/icon-removed-bg.png"
+              src={logoSrc}
               alt="Bossforskiy Logo"
-              width={60}
-              height={60}
-              className="object-contain hidden sm:block"
+              width={150}
+              height={150}
+              className="object-contain -mt-4 block"
             />
-            <p className="hidden sm:block">FORSKIY</p>
-
-            <p className="block sm:hidden">BOSSFORSKIY</p> */}
-            <p className="text-header-logo">
-              BOSSFORSKIY
-            </p>
           </Link>
 
           {/* Правая часть */}

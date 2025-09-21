@@ -1,0 +1,22 @@
+{
+  "Popular": {
+    "header": "Our Exclusive Products",
+    "viewMore": "View More",
+    "addToCart": "Add to Cart",
+    "wishlist": "Wishlist",
+    "products": {
+      "green": {
+        "title": "Green Moisturizing Stick",
+        "description": "Emerald - a gentle breeze of jasmine, pure and delicate."
+      },
+      "gold": {
+        "title": "Golden Moisturizing Stick",
+        "description": "Aura — a deep oriental scent, rich and timeless."
+      },
+      "pink": {
+        "title": "Pink Moisturizing Stick",
+        "description": "Freesia - a powdery floral veil, light and graceful."
+      }
+    }
+  }
+}

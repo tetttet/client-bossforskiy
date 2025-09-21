@@ -1,8 +1,11 @@
 "use client";
+
 import Link from "next/link";
-import React from "react";
+import { useTranslations } from "next-intl";
 
 const HeroHome = () => {
+  const t = useTranslations("Hero.hero");
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background video */}
@@ -23,15 +26,15 @@ const HeroHome = () => {
       {/* Text content */}
       <div className="max-w-10/12 mt-28 mx-auto relative z-20 flex items-center justify-start h-full px-6 md:px-16">
         <div className="max-w-xl text-white">
-          <p className="uppercase hero-new-text text-sm font-light mb-1">New</p>
+          <p className="uppercase hero-new-text text-sm font-light mb-1">
+            {t("new")}
+          </p>
           <h1 className="text-4xl hero-title-text md:text-6xl font-bold leading-tight">
-            <span className="block">SoftSculpt®</span>
-            <span className="block">Blurring Bronzer</span>
+            <span className="block">{t("titleLine1")}</span>
+            <span className="block mt-2">{t("titleLine2")}</span>
           </h1>
-          <button className="mt-1 px-6 py-3 hero-button text-black font-medium uppercase tracking-wider hover:bg-neutral-200 transition">
-            <Link href="/bossforskiy/fashion/collections">
-              Shop Our Collection
-            </Link>
+          <button className="mt-2 px-6 py-3 hero-button text-black font-medium uppercase tracking-wider hover:bg-neutral-200 transition">
+            <Link href="/bossforskiy/fashion/collections">{t("button")}</Link>
           </button>
         </div>
       </div>

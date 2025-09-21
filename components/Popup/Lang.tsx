@@ -14,7 +14,7 @@ interface CookieProps {
 const Lang = ({ isVisible, setIsVisible }: CookieProps) => {
   const handleClose = () => setIsVisible(false);
 
-  const t = useTranslations();
+  const t = useTranslations("Intro");
   const currentLocale = useLocale();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);

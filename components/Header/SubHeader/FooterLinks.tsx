@@ -1,3 +1,4 @@
+import { name } from "@/constant/data";
 import React from "react";
 
 const FooterLinks = ({ bottomLinks }: { bottomLinks: string[] }) => {
@@ -8,7 +9,7 @@ const FooterLinks = ({ bottomLinks }: { bottomLinks: string[] }) => {
         <div className="flex flex-col md:flex-row justify-between items-center p-2 md:p-4 space-y-2 md:space-y-0">
           <div className="text-xs md:text-sm text-gray-500">
             &copy; 2025{" "}
-            <span className="text-black font-medium">Bossforskiy Luxury</span>
+            <span className="text-black font-medium">{name}</span>
             . All rights reserved.
           </div>
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center">

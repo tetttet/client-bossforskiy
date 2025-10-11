@@ -50,7 +50,7 @@ const HeroVideo = () => {
             playsInline
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-white text-4xl md:text-6xl tracking-widest uppercase bg-black/30 px-6 py-3">
+            <h1 className="text-white !text-[30px] tracking-widest uppercase bg-black/30 px-6 py-3">
               Bossforskiy
             </h1>
           </div>
@@ -74,7 +74,7 @@ const HeroVideo = () => {
               playsInline
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-white text-4xl md:text-6xl font-serif tracking-widest uppercase bg-black/30 px-6 py-3">
+              <h1 className="text-white !text-[30px] font-serif tracking-widest uppercase bg-black/30 px-6 py-3">
                 {t("exclusiveBrand")}
               </h1>
             </div>

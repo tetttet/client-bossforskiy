@@ -13,15 +13,14 @@ const TextBlock: React.FC<TextBlockProps> = ({
 }) => {
   return (
     <div
-      className={`text-black text-[13px] font-semibold text-center max-w-5xl mx-auto ${className} px-4 py-24 bg-white/90 backdrop-blur-md rounded-lg`}
+      className={`text-black text-[13px] font-semibold text-center max-w-3xl mx-auto ${className} px-4 py-24 bg-white/90 backdrop-blur-md rounded-lg !-mb-4`}
     >
       {paragraphs.map((paragraph, index) => (
         <p
+          dangerouslySetInnerHTML={{ __html: paragraph }}
           key={index}
-          className={`${paragraphClassName} ${index > 0 ? "mt-5" : ""}`}
-        >
-          {paragraph}
-        </p>
+          className={`${paragraphClassName} ${index > 0 ? "" : ""}`}
+        />
       ))}
     </div>
   );

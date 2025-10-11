@@ -6,15 +6,15 @@
     "wishlist": "Wishlist",
     "products": {
       "green": {
-        "title": "Green Moisturizing Stick",
+        "title": "Green <br/> Moisturizing Stick",
         "description": "Emerald - a gentle breeze of jasmine, pure and delicate."
       },
       "gold": {
-        "title": "Golden Moisturizing Stick",
+        "title": "Golden <br/> Moisturizing Stick",
         "description": "Aura — a deep oriental scent, rich and timeless."
       },
       "pink": {
-        "title": "Pink Moisturizing Stick",
+        "title": "Pink <br/>Moisturizing Stick",
         "description": "Freesia - a powdery floral veil, light and graceful."
       }
     }

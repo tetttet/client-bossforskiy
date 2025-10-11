@@ -1,5 +1,6 @@
 export const logo = "/lg.png";
 
-export const address = "123 Fashion St, Style City, Country";
-export const phone = "+1 (234) 567-890";
+export const address = "İNÖNÜ MAH. CEBEL TOPU SOK. NO:15A ŞİŞLİ PK: 34373 İSTANBUL TÜRKİYE";
+export const name = "Bossforskiy Kozmetik San. Tic. Ltd. Şti.";
+export const phone = "";
 export const email = "info@bossforskiy.com";

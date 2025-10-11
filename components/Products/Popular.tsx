@@ -79,8 +79,9 @@ const Popular = () => {
 
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-serif text-2xl text-gray-800 mb-2">
-                  {service.title}
+                <h3 
+                dangerouslySetInnerHTML={{ __html: service.title }}
+                className="card-title font-serif text-2xl text-gray-800 mb-2">
                 </h3>
                 <p className="text-gray-600 mb-6 font-light flex-1">
                   {service.description}

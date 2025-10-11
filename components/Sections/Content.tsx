@@ -25,10 +25,7 @@ const Content = () => {
       </TextParallaxContentVideo>
 
       <TextBlock
-        paragraphs={[
-          t("bossforskiy.paragraph1"),
-          t("bossforskiy.paragraph2"),
-        ]}
+        paragraphs={[t("bossforskiy.paragraph1"), t("bossforskiy.paragraph2")]}
       />
 
       <TextParallaxContentVideo
@@ -107,10 +104,12 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="text-center content-subheading uppercase md:text-3xl">
+      <p className="text-center content-subheading uppercase md:text-2xl">
         {subheading}
       </p>
-      <p className="text-center !mt-6 content-heading md:text-5xl">{heading}</p>
+      <p className=" text-center !mt-[20px] content-heading md:text-4xl uppercase">
+        {heading}
+      </p>
     </motion.div>
   );
 };

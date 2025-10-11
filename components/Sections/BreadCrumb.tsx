@@ -15,14 +15,13 @@ const BreadCrumb = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h1 className="text-5xl uppercase md:text-6xl font-bold tracking-wide text-black">
+        <h1 className="!text-[18px] mb-4 uppercase md:text-6xl font-bold tracking-wide text-black">
           Bossforskiy
         </h1>
-        <br />
-        <p className="text-sm !mb-1 md:text-base font-medium text-black uppercase tracking-widest">
+        <p className="!text-[30px] uppercase !-mb-0 md:text-base font-medium text-black tracking-widest">
           {t("breadCrumb1")}
         </p>
-        <p className="text-sm md:text-base font-medium text-black uppercase tracking-widest">
+        <p className="!text-[30px] uppercase  md:text-base font-medium text-black tracking-widest">
           {t("breadCrumb2")}
         </p>
       </div>

@@ -110,9 +110,10 @@ const Right = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 120px;
+  font-size: 35px;
   font-family: "Montserrat";
   font-weight: 300;
+  letter-spacing: 0rem;
   color: #333;
   /* text-transform: capitalize; */
 
@@ -140,14 +141,14 @@ const About = () => {
   const t = useTranslations("About");
 
   const img1 = "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=900&auto=format&fit=crop&q=60";
-  const img2 = "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=60";
+  // const img2 = "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=60";
   const img3 = "https://plus.unsplash.com/premium_photo-1679106770086-f4355693be1b?w=900&auto=format&fit=crop&q=60";
 
   return (
     <div className="bg-gradient-to-b from-white to-gray-200 mt-5 md:mt-16">
       <Section id="fixed-target" className="about">
-        <Title>{t("title")}</Title>
-        <Left className="mt-0 lg:!mt-58" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+        <Title className="uppercase -ml-18">{t("title")}</Title>
+        <Left className="mt-0 lg:!mt-20" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
           <p>{t("text1")}</p>
           <br />
           <p>{t("text2")}</p>
@@ -158,7 +159,8 @@ const About = () => {
         </Left>
         <Right>
           <Image width={400} height={600} src={img1} alt={t("title")} />
-          <Image width={400} height={600} className="small-img-1" src={img2} alt={t("title")} />
+          {/* <Image width={400} height={600} className="small-img-1" src={img2} alt={t("title")} />
+           */}
           <Image width={400} height={600} className="small-img-2" src={img3} alt={t("title")} />
         </Right>
       </Section>

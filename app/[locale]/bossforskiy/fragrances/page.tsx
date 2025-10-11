@@ -54,7 +54,7 @@ const page = () => {
             />
           </div>
           <div className="md:w-1/2 md:pl-12 md:pr-12 text-center md:text-left">
-            <h2 className="text-2xl font-semibold mb-4">{fragrance.name}</h2>
+            <h2 className="text-2xl font-semibold -mb-4">{fragrance.name}</h2>
             <p className="text-lg text-gray-700 whitespace-pre-line">
               {fragrance.description}
             </p>

@@ -20,7 +20,7 @@ const CallToAction = () => {
             <h2 className="link text-md font-montserrat-bold uppercase tracking-wider text-black">
               CONTACT AN ADVISOR
             </h2>
-            <p className="text-sm leading-5 text-gray-700">
+            <p className="text-sm leading-5 text-gray-700 !mb-10">
               CHANEL Client Care is available Monday to Sunday, 7 AM to 12 AM
               ET, to answer all your questions.
             </p>
@@ -32,20 +32,20 @@ const CallToAction = () => {
           </div>
 
           {/* FIND A STORE */}
-          <div className="space-y-4">
+          <div className="space-y-4 relative">
             <h2 className="link text-md font-montserrat-bold uppercase tracking-wider text-black">
               FIND A STORE
             </h2>
-            <p className="text-sm leading-5 text-gray-700">
-              Scan to explore BOSSFORSKIY&#39;s stores
-            </p>
-            <div className="flex">
+            <div className="flex gap-2 relative">
               <Image
                 src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com"
                 alt="QR Code"
                 width={150}
                 height={150}
               />
+              <p className="text-sm text-gray-700 absolute -bottom-5 left-1/2 transform -translate-x-1/2 !ml-6">
+                Scan to explore <br /> BOSSFORSKIY&#39;s stores
+              </p>
             </div>
           </div>
 
@@ -64,14 +64,14 @@ const CallToAction = () => {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="py-1 w-full focus:outline-none text-xs bg-transparent"
+                  className="!mt-1 py-1 w-full focus:outline-none text-xs bg-transparent"
                 />
                 <button type="submit" className="ml-2 text-xs uppercase pb-1">
                   →
                 </button>
               </div>
             </form>
-            <p className="text-sm mt-2 text-gray-700">
+            <p className="text-sm text-gray-700 !mt-8">
               By clicking OK, I agree to BOSSFORSKIY&#39;s Privacy Policy and
               Legal Statement.
             </p>

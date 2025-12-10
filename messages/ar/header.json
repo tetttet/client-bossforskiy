@@ -1,0 +1,22 @@
+{
+  "submenuTop": {
+    "skincare": "العناية بالبشرة",
+    "creamSticks": "عصي الكريم",
+    "fragrances": "العطور"
+  },
+  "submenu": {
+    "aboutUs": "معلومات عنا",
+    "ourPhilosophy": "فلسفتنا",
+    "bossforskiyFamily": "عائلة بوسفورسكي"
+  },
+  "links": {
+    "onlineShopping": "التسوق عبر الإنترنت",
+    "cart": "عربة التسوق"
+  },
+  "productSlider": {
+    "title": "اكتشف عالم بوسفورسكي"
+  },
+  "footerLinks": {
+    "address": "العنوان"
+  }
+}

@@ -17,6 +17,7 @@ const LuxuryIntro = () => {
   const languages = [
     { code: "tr", name: "Türkçe" },
     { code: "en", name: "English" },
+    { code: "ar", name: "العربية" },
   ];
 
   // Removed unused selectedRegion state

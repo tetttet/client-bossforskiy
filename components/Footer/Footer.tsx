@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -18,34 +19,34 @@ const Footer = () => {
           </h5>
           <ul className="space-y-2 text-sm text-gray">
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/bossforskiy/about" className="hover:underline">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/bossforskiy/fashion/collections" className="hover:underline">
                 Collection Overview
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="#" className="hover:underline">
                 New Arrivals
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="#" className="hover:underline">
                 Pre-Collections
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/bossforskiy/fashion/collections" className="hover:underline">
                 Our Philosophy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/bossforskiy/bossforskiy-family" className="hover:underline">
                 Bossforskiy family
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

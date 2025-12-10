@@ -2,12 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import Lang from "../Popup/Lang";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -35,11 +30,14 @@ const Ft = () => {
         </div>
 
         <div className="flex items-center gap-4 text-gray-400">
-          <a href="#" aria-label="Instagram" className="hover:text-white">
+          <a
+            href="https://www.instagram.com/bossforskiy/"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Instagram"
+            className="hover:text-white"
+          >
             <FaInstagram size={18} />
-          </a>
-          <a href="#" aria-label="Facebook" className="hover:text-white">
-            <FaFacebookF size={18} />
           </a>
           <a href="#" aria-label="YouTube" className="hover:text-white">
             <FaYoutube size={18} />

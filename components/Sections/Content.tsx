@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { StickyVideo } from "../ui/Sticky";
 // import BlogHome from "../Blog/BlogHome";
 import HeroVideo from "./HeroVideo";
-import Popular from "../Products/Popular";
+// import Popular from "../Products/Popular";
 // import Feature from "./Feature";
 import TextBlock from "../ui/TextBlock";
 import { useTranslations } from "next-intl";
@@ -33,18 +33,20 @@ const Content = () => {
         subheading={t("quality.subheading")}
         heading={t("quality.heading")}
       >
-        <div className="bg-white-primary">
+        {/* <div className="bg-white-primary">
           <Popular />
-        </div>
+        </div> */}
+        <>
+        </>
       </TextParallaxContentVideo>
 
-      <TextParallaxContentVideo
+      {/* <TextParallaxContentVideo
         videoUrl="/videos/bs3.mp4"
         subheading={t("trust.subheading")}
         heading={t("trust.heading")}
       >
         <></>
-      </TextParallaxContentVideo>
+      </TextParallaxContentVideo> */}
     </div>
   );
 };

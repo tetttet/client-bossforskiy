@@ -27,13 +27,34 @@ const Popular = () => {
       image: "/images/Service_image2.jpg",
       alt: "Gift product",
     },
+    {
+      title: t("products.pink.title"),
+      description: t("products.pink.description"),
+      price: "$520",
+      image: "/images/Service_image2.jpg",
+      alt: "dsdss",
+    },
+    {
+      title: t("products.pink.title"),
+      description: t("products.pink.description"),
+      price: "$320",
+      image: "/images/Service_image2.jpg",
+      alt: "dasds",
+    },
+    {
+      title: t("products.pink.title"),
+      description: t("products.pink.description"),
+      price: "$320",
+      image: "/images/Service_image2.jpg",
+      alt: "Gift product",
+    },
   ];
   return (
     <section className="py-20 bg-gradient-to-t from-[#ffffff] via-[#ede5dc] to-[#f7ece0]">
       <div className="container mx-auto px-4">
         {/* Luxury Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl uppercase md:text-5xl text-gray-900 mb-4">
+          <h2 className="text-4xl! md:text-5xl text-gray-900 mb-4 ephesis-font">
             {t("header")}
           </h2>
           <div className="w-24 h-0.5 bg-amber-800 mx-auto"></div>
@@ -56,7 +77,7 @@ const Popular = () => {
                   width={500}
                   height={500}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  src={`/images/Service_image${index + 1}.jpg`}
+                  src={service.image}
                   alt={service.title}
                 />
                 <motion.div
@@ -70,7 +91,7 @@ const Popular = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-amber-600 text-white font-medium tracking-wider uppercase shadow-lg pointer-events-auto"
+                    className="px-8 py-3 bg-amber-600 text-white font-medium tracking-wider shadow-lg! pointer-events-auto"
                   >
                     {t("viewMore")}
                   </motion.button>
@@ -79,19 +100,19 @@ const Popular = () => {
 
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-1">
-                <h3 
-                dangerouslySetInnerHTML={{ __html: service.title }}
-                className="card-title font-serif text-2xl text-gray-800 mb-2">
-                </h3>
-                <p className="text-gray-600 mb-6 font-light flex-1">
+                <h3
+                  dangerouslySetInnerHTML={{ __html: service.title }}
+                  className="card-title text-3xl text-gray-800 mb-2 ephesis-font"
+                ></h3>
+                <p className="text-gray-600 mb-6 font-light flex-1 text-[20px]!">
                   {service.description}
                 </p>
 
                 <div className="flex space-x-3 mt-auto">
-                  <button className="flex-1 px-5 py-2 text-sm tracking-wider font-medium uppercase bg-black text-white hover:bg-amber-800 transition-colors">
+                  <button className="flex-1 px-5 py-2 text-sm tracking-wider font-medium bg-black text-white hover:bg-amber-800 transition-colors">
                     {t("addToCart")}
                   </button>
-                  <button className="flex-1 px-5 py-2 text-sm tracking-wider font-medium uppercase border border-black text-black hover:bg-black hover:text-white transition-colors">
+                  <button className="flex-1 px-5 py-2 text-sm tracking-wider font-medium border border-black text-black hover:bg-black hover:text-white transition-colors">
                     {t("wishlist")}
                   </button>
                 </div>

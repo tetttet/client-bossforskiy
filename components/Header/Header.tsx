@@ -11,11 +11,14 @@ import Overlay from "../ui/Overlay";
 import AnimatedDropdown from "../ui/AnimatedDropdown";
 import { useLocale } from "next-intl";
 import Image from "next/image";
+import { RxAvatar } from "react-icons/rx";
+import AuthForm from "../auth/AuthForm";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [hovered, setHovered] = useState(false);
 
@@ -133,6 +136,7 @@ export default function Header() {
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
                 setMenuOpen(false);
+                setShowLogin(false);
                 if (window.scrollY === 0) {
                   setShowSearch((prev) => !prev);
                 } else {
@@ -153,6 +157,7 @@ export default function Header() {
               href="/bossforskiy/wishlist"
               onClick={() => {
                 setMenuOpen(false);
+                setShowLogin(false);
                 setShowSearch(false);
               }}
               className="flex items-center gap-1 cursor-pointer"
@@ -163,9 +168,32 @@ export default function Header() {
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
                 if (window.scrollY === 0) {
-                  setShowCart((prev) => !prev);
+                  setShowLogin((prev) => !prev);
                   setMenuOpen(false);
                   setShowSearch(false);
+                } else {
+                  const handleScroll = () => {
+                    if (window.scrollY === 0) {
+                      window.removeEventListener("scroll", handleScroll);
+                      setShowLogin((prev) => !prev);
+                      setMenuOpen(false);
+                    }
+                  };
+                  window.addEventListener("scroll", handleScroll);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            >
+              <RxAvatar className="w-5 h-5" />
+            </div>
+            <div
+              className="flex items-center gap-1 cursor-pointer"
+              onClick={() => {
+                if (window.scrollY === 0) {
+                  setMenuOpen(false);
+                  setShowSearch(false);
+                  setShowLogin(false);
+                  setShowCart((prev) => !prev);
                 } else {
                   const handleScroll = () => {
                     if (window.scrollY === 0) {
@@ -197,6 +225,10 @@ export default function Header() {
 
       <AnimatedDropdown isOpen={showSearch}>
         <SearchComponent setShowSearch={setShowSearch} />
+      </AnimatedDropdown>
+
+      <AnimatedDropdown isOpen={showLogin}>
+        <AuthForm setShowLogin={setShowLogin} />
       </AnimatedDropdown>
     </>
   );

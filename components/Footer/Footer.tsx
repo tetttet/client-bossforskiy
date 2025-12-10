@@ -87,7 +87,7 @@ const Footer = () => {
           </h5>
           <div className="flex">
             <Image
-              src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com"
+              src="/images/extra/qr_inst.png"
               alt="QR Code"
               className="shadow-md"
               width={150}

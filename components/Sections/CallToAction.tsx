@@ -38,7 +38,7 @@ const CallToAction = () => {
             </h2>
             <div className="flex gap-2 relative">
               <Image
-                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://example.com"
+                src="/images/extra/qr_inst.png"
                 alt="QR Code"
                 width={150}
                 height={150}

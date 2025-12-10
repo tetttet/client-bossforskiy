@@ -106,10 +106,10 @@ const OverlayCopy = ({ subheading, heading }: OverlayCopyProps) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
     >
-      <p className="text-center content-subheading uppercase md:text-2xl">
+      <p className="text-center content-subheading md:text-3xl!">
         {subheading}
       </p>
-      <p className=" text-center !mt-[20px] content-heading md:text-4xl uppercase">
+      <p className=" text-center !mt-[20px] content-heading md:text-5xl!">
         {heading}
       </p>
     </motion.div>

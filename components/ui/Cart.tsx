@@ -15,11 +15,11 @@ const sidebar = {
   hidden: { x: "100%" },
   visible: {
     x: 0,
-    transition: { type: "spring", stiffness: 300, damping: 30 },
+    transition: { type: "spring", stiffness: 300, damping: 30 } as const,
   },
   exit: {
     x: "100%",
-    transition: { type: "tween", duration: 0.3 },
+    transition: { type: "tween", duration: 0.3 } as const,
   },
 };
 
